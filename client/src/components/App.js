@@ -5,6 +5,7 @@ import "../styles/App.css";
 import { Provider } from "react-redux";
 import store from "../store";
 import Home from "./Home/Home";
+import Locations from "./Locations/Locations";
 
 export default props => {
   return (
@@ -12,6 +13,7 @@ export default props => {
       <Router>
         <div>
           <Route exact path="/" component={Home} />
+          <Route path="/locations" component={Locations} />
         </div>
       </Router>
     </Provider>
