@@ -1,14 +1,31 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { getFeatureProps } from "../../actions/main.actions";
+import firebase from "firebase";
+import "@firebase/firestore";
+import "@firebase/auth";
+import "@firebase/storage";
+
+const config = {
+  apiKey: "AIzaSyDLtGN5Hf2Q-boxgQrnlbKnSbBkGDOMWic",
+  authDomain: "agua-dulce-66f43.firebaseapp.com",
+  databaseURL: "https://agua-dulce-66f43.firebaseio.com",
+  projectId: "agua-dulce-66f43",
+  storageBucket: "agua-dulce-66f43.appspot.com",
+  messagingSenderId: "551008570896",
+  appId: "1:551008570896:web:c63d7334838c40fda7c495",
+  measurementId: "G-3P9NVFH4Z6"
+};
+
+firebase.initializeApp(config);
 
 export default props => {
   const feat_prop = useSelector(appState => appState.feature_properties);
-
+  const storage = firebase.storage();
+  const files = ["eMystery Mesa 2.jpeg", "plane1e.jpeg"];
   useEffect(() => {
     getFeatureProps(feat_prop);
-  }, []);
-  console.log(feat_prop);
+  }, [feat_prop.data]);
   return (
     <div>
       <div className="page-title">
@@ -17,21 +34,23 @@ export default props => {
       <div className="featured-properties">
         <h3>Featured Properties</h3>
         <div className="property-desc">
-          {/* {feat_prop.locations.map(item => (
+          {console.log(feat_prop)}
+          {feat_prop.map(item => (
             <div className="properties_featured">
               {console.log(item)}
-              <h2>{item.locations.name}</h2>
+              <h2>{item.name}</h2>
               <p>{item.description}</p>
             </div>
-          ))} */}
-          {/* <div className="prop-img" />
-          <p>
-            The most visible set at S.O.S is our L10-11, full size, jet
-            fuselage. The interior is vintage 1974, complete with ashtrays. As
-            constructed L10-11 bathrooms were at the very rear of the plane in a
-            curved row. All we did is bring the row of bathrooms forward so it's
-            easy to film both inside and outside the bathrooms.
-          </p>*/}
+          ))}
+
+          {files.map(filename => {
+            storage
+              .ref(`/covers/${filename}`)
+              .getDownloadURL()
+              .then(url => {
+                console.log("Got download url: ", url);
+              });
+          })}
         </div>
       </div>
     </div>
