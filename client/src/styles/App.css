@@ -53,6 +53,7 @@ html {
   .show {
     display: inline;
   }
+
   .hide {
     display: none;
   }
@@ -66,5 +67,10 @@ html {
 
   .search-bar {
     outline: none;
+  }
+
+  .feature-props {
+    height: 100px;
+    width: 50%;
   }
 }
