@@ -1,23 +1,11 @@
-import store from '../store'
-import axios from 'axios'
-import io from 'socket.io-client'
+import store from "../store";
+import axios from "axios";
 
-// MUST CHANGE localhost to IP ADDRESS
-const socket = io.connect('http://localhost:8000')
-
-socket.on('new person', name => {
-  console.log(name)
-})
-
-export function submitName(name) {
-  socket.emit('name', name)
-}
-
-export function greet() {
-  axios.get('/api/greeting').then(resp => {
+export function getFeatureProps() {
+  axios.get("/api/feature_properties").then(resp => {
     store.dispatch({
-      type: 'GREETING',
-      payload: resp.data.greeting
-    })
-  })
+      type: "FEATURE_PROPERTIES",
+      payload: resp.results
+    });
+  });
 }

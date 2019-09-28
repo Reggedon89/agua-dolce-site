@@ -1,12 +1,12 @@
 const initialState = {
-  greeting: ''
-}
+  feature_properties: []
+};
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case 'GREETING':
-      return {...state, greeting: action.payload}
+    case "FEATURE_PROPERTIES":
+      return { ...state, feature_properties: action.payload };
     default:
-      return state
+      return state;
   }
 }

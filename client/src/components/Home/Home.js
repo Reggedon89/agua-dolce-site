@@ -5,7 +5,7 @@ export default props => {
   return (
     <div>
       <HomeHeader />
-      <HomeBody />
+      <HomeBody props={props} />
     </div>
   );
 };
