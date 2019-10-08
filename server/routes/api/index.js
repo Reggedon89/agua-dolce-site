@@ -10,5 +10,11 @@ router.get("/feature_properties/", (req, res, next) => {
     console.log(results);
   });
 });
+router.get("/locations/", (req, res, next) => {
+  const sql = `SELECT * FROM locations`;
+  conn.query(sql, (err, results, fields) => {
+    res.json(results);
+  });
+});
 
 module.exports = router;

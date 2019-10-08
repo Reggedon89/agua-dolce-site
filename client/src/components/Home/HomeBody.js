@@ -31,15 +31,16 @@ export default props => {
   return (
     <div>
       <div className="page-title">
-        <h1>Home</h1>
-      </div>
+        <h1> Home </h1>{" "}
+      </div>{" "}
       <div className="featured-properties">
-        <h3>Featured Properties</h3>
+        <h3> Featured Properties </h3>{" "}
         <div className="property-desc">
-          {console.log(feat_prop)}
+          {" "}
+          {console.log(feat_prop)}{" "}
           {feat_prop.map(item => (
             <div key={item.id} className="properties_featured">
-              <h2>{item.name}</h2>
+              <h2> {item.name} </h2>{" "}
               {item.name === "Mystery Mesa" ? (
                 // this is a temporary fix future version should map through data base and connect each image to the matching  database entry
                 <a
@@ -65,7 +66,7 @@ export default props => {
                     src={
                       "https://firebasestorage.googleapis.com/v0/b/agua-dulce-66f43.appspot.com/o/plane1e.jpeg?alt=media&token=e241ec6e-09af-4951-b686-31e9ca015372"
                     }
-                  ></img>
+                  ></img>{" "}
                 </a>
               ) : item.name === "Sierra Inn" ? (
                 <a
@@ -78,34 +79,34 @@ export default props => {
                     src={
                       "https://firebasestorage.googleapis.com/v0/b/agua-dulce-66f43.appspot.com/o/sierrainn%20(5).jpeg?alt=media&token=729fb9d3-cab7-4a1f-8248-9bdfa1f7eca3"
                     }
-                  ></img>
+                  ></img>{" "}
                 </a>
               ) : (
                 ""
-              )}
-              <p>{item.description}</p>
+              )}{" "}
+              <p> {item.description} </p>{" "}
             </div>
-          ))}
+          ))}{" "}
           {/* {files.map(filename => {
-            storage
-              .ref(`${filename}`)
-              .getDownloadURL()
-              .then(url => {
-                return (
-                  <div>
-                    <img
-                      alt=""
-                      src={
-                        "https://firebasestorage.googleapis.com/v0/b/agua-dulce-66f43.appspot.com/o/eMystery%20Mesa%202.jpeg?alt=media&token=f5a16ed4-5545-4e33-a6f0-5f4b5846ba1f"
-                      }
-                    ></img>
-                    {console.log("Got download url: ", url)}
-                  </div>
-                );
-              });
-          })} */}
-        </div>
-      </div>
+                storage
+                  .ref(`${filename}`)
+                  .getDownloadURL()
+                  .then(url => {
+                    return (
+                      <div>
+                        <img
+                          alt=""
+                          src={
+                            "https://firebasestorage.googleapis.com/v0/b/agua-dulce-66f43.appspot.com/o/eMystery%20Mesa%202.jpeg?alt=media&token=f5a16ed4-5545-4e33-a6f0-5f4b5846ba1f"
+                          }
+                        ></img>
+                        {console.log("Got download url: ", url)}
+                      </div>
+                    );
+                  });
+              })} */}{" "}
+        </div>{" "}
+      </div>{" "}
     </div>
   );
 };
