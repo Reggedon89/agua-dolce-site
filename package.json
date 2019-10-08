@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/pc-summer-2019/boilerplate#readme",
   "dependencies": {
-    "concurrently": "^4.1.1"
+    "@firebase/storage": "^0.3.12",
+    "concurrently": "^4.1.1",
+    "firebase": "^7.0.0"
   },
   "boilerplate": {
     "name": "boilerplate",
