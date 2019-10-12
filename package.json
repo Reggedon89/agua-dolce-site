@@ -21,7 +21,6 @@
     "@firebase/firestore": "^1.6.0",
     "@firebase/storage": "^0.3.13",
     "concurrently": "^4.1.1",
-    "eslint": "^6.5.1",
     "firebase": "^7.1.0"
   },
   "boilerplate": {
