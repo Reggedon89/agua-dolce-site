@@ -6,6 +6,7 @@ export default props => {
     <div>
       <HomeHeader />
       <HomeBody props={props} />
+      {/* this is a test commit */}
     </div>
   );
 };
